@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1000 Juegos Gratis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px auto;
+            max-width: 1200px;
+        }
+        .game-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 200px;
+            margin: 10px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out;
+        }
+        .game-card:hover {
+            transform: scale(1.05);
+        }
+        .game-card img {
+            width: 100%;
+            border-bottom: 1px solid #ddd;
+            border-radius: 5px 5px 0 0;
+        }
+        .game-card h3 {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        .game-card a {
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+        }
+        .game-card a:hover {
+            color: #0056b3;
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>1000 Juegos Gratis Online</h1>
+    </header>
+    <div class="container">
+        <!-- Aquí se generarán dinámicamente las tarjetas de juegos -->
+    </div>
+    <footer>
+        <p>&copy; 2024 1000 Juegos Gratis. Todos los derechos reservados.</p>
+    </footer>
+    <script>
+        const container = document.querySelector('.container');
+
+        // Simulación de datos de juegos
+        const juegos = Array.from({ length: 1000 }, (_, i) => ({
+            nombre: `Juego ${i + 1}`,
+            imagen: `https://via.placeholder.com/200x150?text=Juego+${i + 1}`,
+            enlace: `#juego${i + 1}`
+        }));
+
+        // Generar tarjetas de juegos dinámicamente
+        juegos.forEach(juego => {
+            const gameCard = document.createElement('div');
+            gameCard.classList.add('game-card');
+
+            gameCard.innerHTML = `
+                <img src="${juego.imagen}" alt="${juego.nombre}">
+                <h3>${juego.nombre}</h3>
+                <a href="${juego.enlace}">Jugar ahora</a>
+            `;
+
+            container.appendChild(gameCard);
+        });
+    </script>
+</body>
+</html>
